@@ -1,3 +1,7 @@
+/* Esconde o menu hamburguer e menu lateral no desktop */
+.menu-icon, .mobile-menu { display: none; }
+
+
 /* Centralizando os intens do menu */
 
 header {
@@ -63,4 +67,66 @@ nav ul li a:hover {
 
 .cart {
   cursor: pointer;
+}
+
+
+/* Mobile */
+@media (max-width: 400px) {
+  .menu-icon {
+    display: block;
+    height: 24px;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+  .logo {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  nav, nav ul {
+    display: none !important;
+  }
+  .right-header {
+    margin-left: auto;
+    gap: 16px;
+  }
+  .header-container {
+    padding: 20px 16px;
+    max-width: 100%;
+  }
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 220px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+    transition: left 0.3s;
+    z-index: 1000;
+    padding: 32px 16px;
+  }
+  .mobile-menu.open {
+    left: 0;
+  }
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+  }
+  .mobile-menu li {
+    margin-bottom: 24px;
+  }
+  .mobile-menu a {
+    color: hsl(219, 9%, 45%);
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .close-menu {
+    font-size: 32px;
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
 }
