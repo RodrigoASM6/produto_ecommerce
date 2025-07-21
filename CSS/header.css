@@ -1,0 +1,66 @@
+/* Centralizando os intens do menu */
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1220px; /* ajuste conforme seu layout */
+  padding: 45px 50px;
+  border-bottom: 2px solid hsl(220, 14%, 75%);
+  margin: 0 auto;
+}
+
+/* Customizando tamanho do logo e espaçamento */
+
+.logo {
+  height: 18px;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+/* custumizando os itens do menu */
+
+nav ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+
+nav ul li a {
+  font-size: 14px; /* Ajuste para o tamanho desejado */
+  color: hsl(219, 9%, 45%);
+  border-bottom: 300x;
+  padding-bottom: 55px;
+}
+
+nav ul li a:hover {
+  color: hsl(220, 13%, 13%);
+  border-bottom: 4px solid hsl(26, 100%, 55%);
+}
+
+/* customizando os itens da direita do header, o icone do cart e avatar */
+
+.right-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: 500px; /* Aumente esse valor para mais espaçamento */
+}
+
+.avatar {
+  height: 45px; /* Escolha o tamanho desejado */
+  width: 45px;
+  border-radius: 50%;
+  border: 2px solid hsl(26, 100%, 55%);
+  cursor: pointer;
+}
+
+.cart {
+  cursor: pointer;
+}
