@@ -54,7 +54,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   gap: 30px;
-  margin-left: 500px; /* Aumente esse valor para mais espaçamento */
+  margin-left: auto; /* Corrige o alinhamento à direita */
 }
 
 .avatar {
@@ -71,7 +71,7 @@ nav ul li a:hover {
 
 
 /* Mobile */
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .menu-icon {
     display: block;
     height: 24px;
