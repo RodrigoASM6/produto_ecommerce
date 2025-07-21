@@ -1,56 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="stylesheet" href="./CSS/header.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/header.css" />
+    <link rel="stylesheet" href="./CSS/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Pagina Eccomerce</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <!--Menus no cabeçalho da pagina-->
 
+    <header>
+      <div class="header-container">
+        <img
+          src="./imagens/icon-menu.svg"
+          alt="Abrir menu"
+          class="menu-icon"
+          id="openMenu"
+        />
+        <img src="./imagens/logo.svg" alt="Logo da loja" class="logo" />
+        <nav>
+          <ul>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#men">Men</a></li>
+            <li><a href="#women">Women</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="right-header">
+          <img
+            src="./imagens/icon-cart.svg"
+            alt="carrinho de compras"
+            class="cart"
+          />
+          <img src="./imagens/image-avatar.png" alt="avatar" class="avatar" />
+        </div>
+      </div>
 
-<header>
-  <div class="header-container">
-    <img src="./imagens/icon-menu.svg" alt="Abrir menu" class="menu-icon" id="openMenu">
-    <img src="./imagens/logo.svg" alt="Logo da loja" class="logo">
-    <nav>
-      <ul>
-        <li><a href="#collections">Collections</a></li>
-        <li><a href="#men">Men</a></li>
-        <li><a href="#women">Women</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="right-header">
-      <img src="./imagens/icon-cart.svg" alt="carrinho de compras" class="cart">
-      <img src="./imagens/image-avatar.png" alt="avatar" class="avatar">
-    </div>
-  </div>
+      <!-- Menu lateral mobile -->
+      <div class="mobile-menu" id="mobileMenu">
+        <span class="close-menu" id="closeMenu">&times;</span>
+        <ul>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#men">Men</a></li>
+          <li><a href="#women">Women</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
 
-  <!-- Menu lateral mobile -->
-  <div class="mobile-menu" id="mobileMenu">
-    <span class="close-menu" id="closeMenu">&times;</span>
-    <ul>
-      <li><a href="#collections">Collections</a></li>
-      <li><a href="#men">Men</a></li>
-      <li><a href="#women">Women</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+    <!-- Main da pagina -->
 
-<script src="./javascript.js"></script>
-</header>
+    <main class="container-principal">
+      <section class="galeria-produto">
+        <div class="imagem-principal">
+          <img
+            id="imagem-grande"
+            src="imagens/image-product-1.jpg"
+            alt="Produto"
+          />
+        </div>
+        <div class="miniaturas">
+          <img
+            class="miniatura selecionada"
+            src="imagens/image-product-1-thumbnail.jpg"
+            alt="Miniatura 1"
+            data-imagem="imagens/image-product-1.jpg"
+          />
+          <img
+            class="miniatura"
+            src="imagens/image-product-2-thumbnail.jpg"
+            alt="Miniatura 2"
+            data-imagem="imagens/image-product-2.jpg"
+          />
+          <img
+            class="miniatura"
+            src="imagens/image-product-3-thumbnail.jpg"
+            alt="Miniatura 3"
+            data-imagem="imagens/image-product-3.jpg"
+          />
+          <img
+            class="miniatura"
+            src="imagens/image-product-4-thumbnail.jpg"
+            alt="Miniatura 4"
+            data-imagem="imagens/image-product-4.jpg"
+          />
+        </div>
+      </section>
 
-
-
-
-</body>
+      <section class="info-produto">
+        <div class="cabecalho-produto">
+          <p class="nome-produto">SNEAKER COMPANY</p>
+          <h1>Fall Limite Sneakers</h1>
+        </div>
+        <div class="descricao-produto">
+          <p class="explicacao">
+            These low-profile sneakers are perfect casual wear companion.
+            Featuring a durable rubber outer sole, they'll withstand everything
+            the weather can offer.
+          </p>
+        </div>
+        <div class="precos-produto">
+          <h2>$125.00</h2>
+          <p class="preco-menor">$250.00</p>
+        </div>
+        <div class="controle-carrinho">
+          <div class="quantidade">
+            <button id="diminuir" type="button">
+              <img src="imagens/icon-minus.svg" alt="Diminuir quantidade" />
+            </button>
+            <span id="quantidade-itens">1</span>
+            <button id="aumentar" type="button">
+              <img src="imagens/icon-plus.svg" alt="Aumentar quantidade" />
+            </button>
+          </div>
+          <button class="adicionar-carrinho">
+            <img src="./imagens/icon-cart.svg" alt="" /> Add to cart
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="./javascript.js"></script>
+  </body>
 </html>

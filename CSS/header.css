@@ -71,7 +71,8 @@ nav ul li a:hover {
 
 
 /* Mobile */
-@media (max-width: 600px) {
+
+@media (max-width: 700px) {
   .menu-icon {
     display: block;
     height: 24px;
