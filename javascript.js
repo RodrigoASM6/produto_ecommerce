@@ -73,7 +73,7 @@ cartIcon.addEventListener("click", function () {
   if (quantidadeNoCarrinho > 0) {
     cartPopupQtd.textContent = quantidadeNoCarrinho;
     const total = quantidadeNoCarrinho * 125;
-    cartPopupTotal.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
+    cartPopupTotal.textContent = `US$ ${total.toFixed(2)}`;
     cartPopup.classList.add("show");
   }
 });

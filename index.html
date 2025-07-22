@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Importação dos estilos principais -->
     <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="stylesheet" href="./CSS/header.css" />
     <link rel="stylesheet" href="./CSS/main.css" />
+    <!-- Fontes externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,17 +17,21 @@
     <title>Pagina Eccomerce</title>
   </head>
   <body>
-    <!--Menus no cabeçalho da pagina-->
-
+    <!-- =========================
+         HEADER PRINCIPAL
+         ========================= -->
     <header>
       <div class="header-container">
+        <!-- Ícone do menu hamburguer (mobile) -->
         <img
           src="./imagens/icon-menu.svg"
           alt="Abrir menu"
           class="menu-icon"
           id="openMenu"
         />
+        <!-- Logo da loja -->
         <img src="./imagens/logo.svg" alt="Logo da loja" class="logo" />
+        <!-- Menu de navegação (desktop) -->
         <nav>
           <ul>
             <li><a href="#collections">Collections</a></li>
@@ -35,7 +41,9 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
+        <!-- Área à direita do header: carrinho e avatar -->
         <div class="right-header">
+          <!-- Ícone do carrinho com badge de quantidade -->
           <div
             class="cart-icon-container"
             style="position: relative; display: inline-block"
@@ -50,11 +58,14 @@
               >0</span
             >
           </div>
+          <!-- Avatar do usuário -->
           <img src="./imagens/image-avatar.png" alt="avatar" class="avatar" />
         </div>
       </div>
 
-      <!-- Menu lateral mobile -->
+      <!-- =========================
+           MENU LATERAL MOBILE
+           ========================= -->
       <div class="mobile-menu" id="mobileMenu">
         <span class="close-menu" id="closeMenu">&times;</span>
         <ul>
@@ -67,30 +78,35 @@
       </div>
     </header>
 
-    <!-- Pop-up do carrinho -->
+    <!-- =========================
+         POP-UP DO CARRINHO
+         ========================= -->
     <div id="cart-popup" class="cart-popup">
       <div class="cart-popup-content">
         <div class="cart-popup-header">
           <span class="cart-popup-title">Cart</span>
         </div>
         <div class="cart-popup-body">
+          <!-- Imagem do produto no carrinho -->
           <img
             src="imagens/image-product-1-thumbnail.jpg"
             alt="Produto"
             class="cart-popup-thumb"
           />
+          <!-- Informações do produto no carrinho -->
           <div class="cart-popup-info">
             <span class="cart-popup-produto">Fall Limite Sneakers</span>
             <div class="cart-popup-preco-qtd">
-              <span class="cart-popup-preco">R$ 125,00</span>
+              <span class="cart-popup-preco">US$ 125.00</span>
               <span class="cart-popup-quantidade"
                 >Qtd: <span id="cart-popup-qtd">1</span></span
               >
             </div>
             <span class="cart-popup-total"
-              >Total: <span id="cart-popup-total">R$ 125,00</span></span
+              >Total: <span id="cart-popup-total">US$ 125.00</span></span
             >
           </div>
+          <!-- Ícone de deletar produto do carrinho -->
           <img
             src="imagens/icon-delete.svg"
             alt="Remover"
@@ -98,13 +114,16 @@
             id="cart-popup-delete"
           />
         </div>
+        <!-- Botão de checkout -->
         <button class="cart-popup-checkout">Checkout</button>
       </div>
     </div>
 
-    <!-- Main da pagina -->
-
+    <!-- =========================
+         CONTEÚDO PRINCIPAL (MAIN)
+         ========================= -->
     <main class="container-principal">
+      <!-- Galeria de imagens do produto -->
       <section class="galeria-produto">
         <div class="imagem-principal">
           <img
@@ -141,6 +160,7 @@
         </div>
       </section>
 
+      <!-- Informações do produto -->
       <section class="info-produto">
         <div class="cabecalho-produto">
           <p class="nome-produto">SNEAKER COMPANY</p>
@@ -156,10 +176,12 @@
             the weather can offer.
           </p>
         </div>
+        <!-- Preços e desconto -->
         <div class="precos-produto">
           <h2>$125.00 <span class="desconto">50%</span></h2>
           <p class="preco-menor">$250.00</p>
         </div>
+        <!-- Controle de quantidade e botão de adicionar ao carrinho -->
         <div class="controle-carrinho">
           <div class="quantidade">
             <button id="diminuir" type="button">
@@ -176,6 +198,9 @@
         </div>
       </section>
     </main>
+    <!-- =========================
+         SCRIPTS PRINCIPAIS
+         ========================= -->
     <script src="./javascript.js"></script>
   </body>
 </html>
