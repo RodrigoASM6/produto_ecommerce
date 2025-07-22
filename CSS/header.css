@@ -1,9 +1,8 @@
-/* Esconde o menu hamburguer e menu lateral no desktop */
-.menu-icon, .mobile-menu { display: none; }
+/* =========================
+   HEADER - ESTRUTURA GERAL
+   ========================= */
 
-
-/* Centralizando os intens do menu */
-
+/* Centraliza o conteúdo do header e define largura máxima */
 header {
   display: flex;
   justify-content: center;
@@ -20,36 +19,47 @@ header {
   margin: 0 auto;
 }
 
-/* Customizando tamanho do logo e espaçamento */
+/* =========================
+   LOGO
+   ========================= */
 
+/* Define tamanho e espaçamento do logo */
 .logo {
   height: 18px;
   margin-right: 50px;
   cursor: pointer;
 }
 
-/* custumizando os itens do menu */
+/* =========================
+   MENU DE NAVEGAÇÃO (DESKTOP)
+   ========================= */
 
+/* Exibe o menu como uma lista horizontal e espaça os itens */
 nav ul {
   display: flex;
   gap: 50px;
   list-style: none;
 }
 
+/* Estiliza os links do menu */
 nav ul li a {
   font-size: 14px; /* Ajuste para o tamanho desejado */
   color: hsl(219, 9%, 45%);
-  border-bottom: 300x;
+  border-bottom: 100px; 
   padding-bottom: 55px;
 }
 
+/* Efeito hover nos links do menu */
 nav ul li a:hover {
   color: hsl(220, 13%, 13%);
   border-bottom: 4px solid hsl(26, 100%, 55%);
 }
 
-/* customizando os itens da direita do header, o icone do cart e avatar */
+/* =========================
+   ITENS À DIREITA (CARRINHO E AVATAR)
+   ========================= */
 
+/* Agrupa e alinha os ícones do carrinho e avatar à direita */
 .right-header {
   display: flex;
   align-items: center;
@@ -57,6 +67,7 @@ nav ul li a:hover {
   margin-left: auto; /* Corrige o alinhamento à direita */
 }
 
+/* Estiliza o avatar do usuário */
 .avatar {
   height: 45px; /* Escolha o tamanho desejado */
   width: 45px;
@@ -65,35 +76,54 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+/* Estiliza o ícone do carrinho */
 .cart {
   cursor: pointer;
 }
 
+/* =========================
+   MENU HAMBURGUER E MENU LATERAL (MOBILE)
+   ========================= */
 
-/* Mobile */
+/* Esconde o menu hamburguer e menu lateral no desktop */
+.menu-icon,
+.mobile-menu {
+  display: none;
+}
+
+/* =========================
+   RESPONSIVIDADE (TELAS PEQUENAS)
+   ========================= */
 
 @media (max-width: 700px) {
+  /* Exibe o ícone do menu hamburguer */
   .menu-icon {
     display: block;
     height: 24px;
     margin-right: 16px;
     cursor: pointer;
   }
+  /* Ajusta o logo para ocupar o espaço à esquerda */
   .logo {
     margin-right: auto;
     margin-left: 0;
   }
-  nav, nav ul {
+  /* Esconde o menu de navegação padrão no mobile */
+  nav,
+  nav ul {
     display: none !important;
   }
+  /* Ajusta o espaçamento dos itens à direita */
   .right-header {
     margin-left: auto;
     gap: 16px;
   }
+  /* Reduz o padding do header no mobile */
   .header-container {
     padding: 20px 16px;
     max-width: 100%;
   }
+  /* Exibe e estiliza o menu lateral mobile */
   .mobile-menu {
     display: block;
     position: fixed;
@@ -102,14 +132,16 @@ nav ul li a:hover {
     width: 220px;
     height: 100%;
     background: #fff;
-    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
     transition: left 0.3s;
     z-index: 1000;
     padding: 32px 16px;
   }
+  /* Quando o menu lateral está aberto */
   .mobile-menu.open {
     left: 0;
   }
+  /* Estiliza a lista do menu lateral */
   .mobile-menu ul {
     list-style: none;
     padding: 0;
@@ -123,6 +155,7 @@ nav ul li a:hover {
     font-size: 18px;
     text-decoration: none;
   }
+  /* Ícone de fechar o menu lateral */
   .close-menu {
     font-size: 32px;
     cursor: pointer;

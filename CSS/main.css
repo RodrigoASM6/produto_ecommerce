@@ -1,15 +1,23 @@
-/* Regras específicas do main e suas seções */
+/* =========================
+   MAIN - ESTRUTURA GERAL
+   ========================= */
 
+/* Container principal do conteúdo da página */
 .container-principal {
   max-width: 2200px;
   margin: 40px auto 0 auto;
   display: flex;
-  gap: 200px;
+  gap: 100px;
   align-items: flex-start;
   justify-content: center;
   padding: 0 60px;
 }
 
+/* =========================
+   GALERIA DE PRODUTO
+   ========================= */
+
+/* Galeria de imagens do produto */
 .galeria-produto {
   width: 420px;
   display: flex;
@@ -17,15 +25,18 @@
   align-items: center;
 }
 
+/* Imagem principal do produto */
 .imagem-principal img {
-  max-width: 350px;
+  max-width: 400px;
   min-height: 200px;
   width: 100%;
   display: block;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  margin-top: 30px;
 }
 
+/* Miniaturas das imagens do produto */
 .miniaturas {
   display: flex;
   gap: 30px;
@@ -42,24 +53,31 @@
   object-fit: cover;
 }
 
+/* Miniatura selecionada */
 .miniatura.selecionada {
   border: 2px solid #ff7d1a;
   opacity: 0.7;
 }
 
+/* =========================
+   INFORMAÇÕES DO PRODUTO
+   ========================= */
+
+/* Container das informações do produto */
 .info-produto {
   width: 500px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 15px;
+  margin-top: 50px;
 }
 
+/* Cabeçalho do produto (marca, nome) */
 .cabecalho-produto p {
   color: hsl(220, 13%, 13%);
-  font-weight: bold;
   letter-spacing: 2px;
   margin-bottom: 5px;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .cabecalho-produto h1 {
@@ -67,11 +85,16 @@
   margin-bottom: 10px;
 }
 
+/* Descrição do produto */
 .descricao-produto {
   color: #68707d;
   font-size: 1.7em;
   line-height: 1.5;
 }
+
+/* =========================
+   PREÇOS DO PRODUTO
+   ========================= */
 
 .precos-produto h2 {
   color: #222;
@@ -79,12 +102,42 @@
   margin-bottom: 5px;
 }
 
+/* Preço antigo (riscado) */
 .preco-menor {
   color: #b6bcc8;
   text-decoration: line-through;
   font-size: 1.3em;
 }
 
+/* =========================
+   DESCONTO AO LADO DO PREÇO ANTIGO
+   ========================= */
+
+.preco-desconto {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.desconto {
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.4em;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  letter-spacing: 1px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/* =========================
+   CONTROLE DE CARRINHO
+   ========================= */
+
+/* Área de controle de quantidade e botão de adicionar ao carrinho */
 .controle-carrinho {
   display: flex;
   gap: 30px;
@@ -92,6 +145,7 @@
   margin-top: 10px;
 }
 
+/* Controle de quantidade de itens */
 .quantidade {
   display: flex;
   align-items: center;
@@ -99,32 +153,203 @@
   border-radius: 8px;
   padding: 12px 24px;
   gap: 20px;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .quantidade button {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px;
+  padding: 2px;
   display: flex;
   align-items: center;
 }
 
-.quantidade button img {
-  width: 20px;
-  height: 20px;
+/* Quantidade de itens exibida */
+#quantidade-itens {
+  min-width: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
 }
 
-#quantidade-itens {
-  min-width: 20px;
-  text-align: center;
+/* Botão de adicionar ao carrinho */
+#adicionar-carrinho,
+.adicionar-carrinho {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 16px 32px;
+  background: hsl(26, 100%, 55%);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 320px; /* Aumenta a largura do botão */
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+#adicionar-carrinho:hover,
+.adicionar-carrinho:hover {
+  background: hsl(26, 100%, 60%); /* Laranja um pouco mais claro no hover */
+}
+
+/* Ícone do carrinho dentro do botão de adicionar ao carrinho */
+#adicionar-carrinho img,
+.adicionar-carrinho img {
+  filter: brightness(0) saturate(100%); /* Deixa o SVG preto */
+}
+
+/* =========================
+   POP-UP DO CARRINHO
+   ========================= */
+
+.cart-popup {
+  position: absolute;
+  right: 150px;
+  width: 350px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  border-radius: 12px;
+  z-index: 2000;
+  padding: 0;
+  font-family: inherit;
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cart-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.cart-popup-content {
+  padding: 18px 18px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-popup-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.cart-popup-title {
   font-weight: bold;
   font-size: 1.1em;
 }
 
-#adicionar-carrinho,
-.adicionar-carrinho {
+.cart-popup-body {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-popup-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.cart-popup-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2px;
+}
+
+.cart-popup-produto {
   font-size: 1em;
-  padding: 10px 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.cart-popup-preco {
+  font-size: 0.95em;
+  color: #888;
+}
+
+.cart-popup-quantidade {
+  font-size: 0.95em;
+  color: #888;
+}
+
+.cart-popup-total {
+  font-size: 1em;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Remover regras de tamanho e cor do .cart-popup-delete para deixar o ícone padrão */
+.cart-popup-delete {
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.cart-popup-checkout {
+  margin-top: 16px;
+  width: 100%;
+  padding: 14px 0;
+  background: hsl(26, 100%, 55%);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cart-popup-checkout:hover {
+  background: hsl(26, 100%, 60%);
+}
+
+.cart-popup-preco-qtd {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 700px) {
+  .cart-popup {
+    right: 10px;
+    width: 95vw;
+    min-width: 0;
+    top: 80px;
+  }
+}
+
+/* =========================
+   BADGE DE QUANTIDADE NO CARRINHO
+   ========================= */
+.cart-badge {
+  position: absolute;
+  bottom: -8px;
+  right: -10px;
+  min-width: 20px;
+  height: 20px;
+  background: hsl(26, 100%, 55%);
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  padding: 0 6px;
+  pointer-events: none;
 }

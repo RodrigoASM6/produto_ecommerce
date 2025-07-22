@@ -36,11 +36,20 @@
           </ul>
         </nav>
         <div class="right-header">
-          <img
-            src="./imagens/icon-cart.svg"
-            alt="carrinho de compras"
-            class="cart"
-          />
+          <div
+            class="cart-icon-container"
+            style="position: relative; display: inline-block"
+          >
+            <img
+              src="./imagens/icon-cart.svg"
+              alt="carrinho de compras"
+              class="cart"
+              id="cartIcon"
+            />
+            <span id="cart-badge" class="cart-badge" style="display: none"
+              >0</span
+            >
+          </div>
           <img src="./imagens/image-avatar.png" alt="avatar" class="avatar" />
         </div>
       </div>
@@ -57,6 +66,41 @@
         </ul>
       </div>
     </header>
+
+    <!-- Pop-up do carrinho -->
+    <div id="cart-popup" class="cart-popup">
+      <div class="cart-popup-content">
+        <div class="cart-popup-header">
+          <span class="cart-popup-title">Cart</span>
+        </div>
+        <div class="cart-popup-body">
+          <img
+            src="imagens/image-product-1-thumbnail.jpg"
+            alt="Produto"
+            class="cart-popup-thumb"
+          />
+          <div class="cart-popup-info">
+            <span class="cart-popup-produto">Fall Limite Sneakers</span>
+            <div class="cart-popup-preco-qtd">
+              <span class="cart-popup-preco">R$ 125,00</span>
+              <span class="cart-popup-quantidade"
+                >Qtd: <span id="cart-popup-qtd">1</span></span
+              >
+            </div>
+            <span class="cart-popup-total"
+              >Total: <span id="cart-popup-total">R$ 125,00</span></span
+            >
+          </div>
+          <img
+            src="imagens/icon-delete.svg"
+            alt="Remover"
+            class="cart-popup-delete"
+            id="cart-popup-delete"
+          />
+        </div>
+        <button class="cart-popup-checkout">Checkout</button>
+      </div>
+    </div>
 
     <!-- Main da pagina -->
 
@@ -100,7 +144,10 @@
       <section class="info-produto">
         <div class="cabecalho-produto">
           <p class="nome-produto">SNEAKER COMPANY</p>
-          <h1>Fall Limite Sneakers</h1>
+          <h1>
+            Fall Limite<br />
+            Sneakers
+          </h1>
         </div>
         <div class="descricao-produto">
           <p class="explicacao">
@@ -110,7 +157,7 @@
           </p>
         </div>
         <div class="precos-produto">
-          <h2>$125.00</h2>
+          <h2>$125.00 <span class="desconto">50%</span></h2>
           <p class="preco-menor">$250.00</p>
         </div>
         <div class="controle-carrinho">
