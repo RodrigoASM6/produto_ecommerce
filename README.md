@@ -1,5 +1,7 @@
 # 🛒 E-commerce Product Page
 
+![Preview do Site](imagens/imagem-do-site.png)
+
 ## 📋 Sobre o Projeto
 
 Este projeto é uma página de produto de e-commerce desenvolvida como desafio do **Frontend Mentor**. A página apresenta um tênis da marca "Sneaker Company" com funcionalidades completas de galeria de imagens, carrinho de compras e design responsivo.
