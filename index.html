@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Importação dos estilos principais -->
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <link rel="stylesheet" href="./CSS/header.css" />
-    <link rel="stylesheet" href="./CSS/main.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/header.css" />
+    <link rel="stylesheet" href="./style/main.css" />
     <!-- Fontes externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -126,11 +126,33 @@
       <!-- Galeria de imagens do produto -->
       <section class="galeria-produto">
         <div class="imagem-principal">
+          <button
+            class="seta-anterior seta-mobile"
+            aria-label="Imagem anterior"
+            style="display: none"
+          >
+            <img
+              src="imagens/icon-previous.svg"
+              class="setaesquerda"
+              alt="Anterior"
+            />
+          </button>
           <img
             id="imagem-grande"
             src="imagens/image-product-1.jpg"
             alt="Produto"
           />
+          <button
+            class="seta-proxima seta-mobile"
+            aria-label="Próxima imagem"
+            style="display: none"
+          >
+            <img
+              src="imagens/icon-next.svg"
+              class="setadireita"
+              alt="Próxima"
+            />
+          </button>
         </div>
         <div class="miniaturas">
           <img
